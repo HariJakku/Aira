@@ -101,9 +101,10 @@ export default function RegisterPage({
 
       setDone(true);
     } catch (err) {
-      console.error(err);
-      setError("Something went wrong. Please try again.");
-    } finally {
+  console.error(err);
+  setError("Something went wrong. Please try again.");
+}
+    finally {
       setLoading(false);
     }
   }
