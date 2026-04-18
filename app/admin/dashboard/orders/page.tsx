@@ -35,12 +35,6 @@ export default function AdminOrdersPage() {
     load();
   }, []);
 
-  async function updateStatus(id: string, newStatus: string) {
-    const supabase = createClient();
-    await supabase.from("orders").update({ status: newStatus }).eq("id", id);
-    setOrders((o) => o.map((ord) => ord.id === id ? { ...ord, status: newStatus } : ord));
-  }
-
   const filtered = orders.filter((o) => {
     const matchSearch = o.customer_name.toLowerCase().includes(search.toLowerCase()) ||
       o.order_no.toLowerCase().includes(search.toLowerCase());
@@ -153,8 +147,14 @@ export default function AdminOrdersPage() {
                     </td>
                     <td className="px-3 py-3">
                       <select
-                        value={o.status}
-                        onChange={(e) => updateStatus(o.id, e.target.value)}
+                        onChange={async (e) => {
+                          const newStatus = e.target.value;
+                          const supabase = createClient();
+                          await supabase.from("orders").update({ status: newStatus }).eq("id", o.id);
+                          setOrders((prev) =>
+                            prev.map((ord) => ord.id === o.id ? { ...ord, status: newStatus } : ord)
+                          );
+                        }}
                         className="text-xs px-2 py-1 rounded-lg border cursor-pointer"
                         style={{ borderColor: "hsl(var(--border))", background: "white", color: "var(--aira-dark)" }}>
                         {["pending","processing","completed","cancelled"].map((s) => <option key={s} value={s}>{s}</option>)}

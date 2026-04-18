@@ -1,3 +1,5 @@
+"use client";
+
 import DashboardShell from "@/components/layout/DashboardShell";
 import {
   LayoutDashboard, ClipboardList, ListOrdered, UserCircle,
