@@ -75,6 +75,13 @@ export default function HomePage() {
                 {item}
               </a>
             ))}
+            <Link
+              href="/gallery"
+              className="link-underline text-sm font-medium"
+              style={{ color: "var(--aira-text)" }}
+            >
+              Gallery
+            </Link>
           </div>
 
           {/* CTA */}
@@ -137,6 +144,13 @@ export default function HomePage() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <Link
+              href="/gallery"
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full font-medium border transition-all duration-200 hover:bg-amber-50 w-full sm:w-auto justify-center"
+              style={{ borderColor: "rgba(139,115,85,0.3)", color: "var(--aira-gold)" }}
+            >
+              View Gallery <ChevronRight size={16} />
+            </Link>
             <Link
               href="/customer/login"
               className="flex items-center gap-2 px-7 py-3.5 rounded-full font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl w-full sm:w-auto justify-center"
