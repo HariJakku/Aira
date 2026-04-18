@@ -250,8 +250,8 @@ export default function HomePage() {
             <div>
               <div className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--aira-gold-muted)" }}>Get In Touch</div>
               <div className="space-y-2 text-sm opacity-70">
-                <p>hello@aira.in</p>
-                <p>+91 98765 43210</p>
+                <p>hello@aira.net.in</p>
+                <p>+91 91437 37143</p>
                 <p>Available Mon – Sat, 9 AM – 7 PM</p>
               </div>
             </div>

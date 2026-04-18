@@ -115,6 +115,10 @@ export default function RegisterPage({
             },
             { onConflict: "id" }
           );
+          await supabase
+  .from("profiles")
+  .update({ phone: phone.trim() })
+  .eq("id", data.user.id);
 
         // Don't block registration if profile update fails — log it
         if (profileError) {
