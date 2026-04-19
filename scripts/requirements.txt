@@ -1,0 +1,25 @@
+# AIRA Platform — Python dependencies for image processing & API server
+# Install with: pip install -r scripts/requirements.txt
+
+# ── Image Processing ──────────────────────────────────────────────────────────
+opencv-python-headless>=4.8.0   # OpenCV for inpainting & image manipulation
+Pillow>=10.0.0                   # PIL Image handling
+pytesseract>=0.3.10              # Python wrapper for Tesseract OCR
+numpy>=1.24.0                    # Array operations
+
+# ── Optional: EasyOCR (better accuracy, requires PyTorch) ────────────────────
+# Uncomment the lines below if you want EasyOCR instead of Tesseract
+# easyocr>=1.7.0
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# ── API Server (optional — only if using standalone FastAPI server) ───────────
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.9
+
+# ── System dependency (not pip) ───────────────────────────────────────────────
+# Tesseract OCR engine must be installed separately:
+#   Ubuntu/Debian:  sudo apt-get install tesseract-ocr
+#   macOS:          brew install tesseract
+#   Windows:        https://github.com/UB-Mannheim/tesseract/wiki

@@ -1,0 +1,552 @@
+[
+  {
+    "id": "I1",
+    "index": 1,
+    "image": "/gallery/I1.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 1100,
+    "height": 640
+  },
+  {
+    "id": "I2",
+    "index": 2,
+    "image": "/gallery/I2.jpg",
+    "title": "Gold Plated Gift Item",
+    "text": "GOLD PLATED",
+    "specs": {
+      "Material": "Gold Plated"
+    },
+    "category": "\u2728 Gold Plated Collection",
+    "hasText": true,
+    "width": 900,
+    "height": 880
+  },
+  {
+    "id": "I3",
+    "index": 3,
+    "image": "/gallery/I3.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 900,
+    "height": 860
+  },
+  {
+    "id": "I4",
+    "index": 4,
+    "image": "/gallery/I4.jpg",
+    "title": "Premium Gift Item",
+    "text": "Packing \u2014 Card Board",
+    "specs": {
+      "Packing": "Card Board"
+    },
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": true,
+    "width": 950,
+    "height": 900
+  },
+  {
+    "id": "I5",
+    "index": 5,
+    "image": "/gallery/I5.jpg",
+    "title": "Premium Gift Item",
+    "text": "Packing \u2014 Card Board",
+    "specs": {
+      "Packing": "Card Board"
+    },
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": true,
+    "width": 900,
+    "height": 820
+  },
+  {
+    "id": "I6",
+    "index": 6,
+    "image": "/gallery/I6.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 850,
+    "height": 900
+  },
+  {
+    "id": "I7",
+    "index": 7,
+    "image": "/gallery/I7.jpg",
+    "title": "Silver Plated & Pure Brass Urli / Planter (ACGS-31)",
+    "text": ". Se CODE - ACGS-31\nSILVER PLATED PURE BRASS\nURLI\nWEIGHT - APP 750\nGMS.\nSIZE - 8\u201d DIAMETER\nPACKING -REXIN / VELVET BOX",
+    "specs": {
+      "Code": "ACGS-31",
+      "Material": "Silver Plated & Pure Brass",
+      "Size": "8\u201d DIAMETER",
+      "Weight": "750",
+      "Packing": "REXIN / VELVET BOX"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 800,
+    "height": 680
+  },
+  {
+    "id": "I8",
+    "index": 8,
+    "image": "/gallery/I8.jpg",
+    "title": "Gold Plated & Pure Brass Urli / Planter (ACGS-28)",
+    "text": "CODE: \u2014ACGS-28\nGOLD PLATED PURE\nBRASS URLI\nSIZE - 8\u201d DIAMETER\nWEIGHT - 750 GM APP.\nSIZE - 10\u201d DIAMETER\nWEIGHT - 1000 GM APP.\nPACKING - REXIN / RED VELVET BOX",
+    "specs": {
+      "Code": "ACGS-28",
+      "Material": "Gold Plated & Pure Brass",
+      "Size": "8\u201d DIAMETER",
+      "Weight": "750 GM APP.",
+      "Packing": "REXIN / RED VELVET BOX"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 700,
+    "height": 470
+  },
+  {
+    "id": "I9",
+    "index": 9,
+    "image": "/gallery/I9.jpg",
+    "title": "Silver Plated & Pure Brass Urli / Planter (ACGS-27)",
+    "text": "GODE\u2014 ACGS-27\nSILVER PLATED PURE BRASS URLI\nSIZE - 8\u201d DIAMETER WEIGHT - 800\nGMS. APP.\nSIZE - 10\u201d DIAMETER\nWEIGHT - 1000 GMS. APP.\nPACKING -REXIN / VELVET BOX",
+    "specs": {
+      "Code": "ACGS-27",
+      "Material": "Silver Plated & Pure Brass",
+      "Size": "8\u201d DIAMETER WEIGHT - 800",
+      "Weight": "800",
+      "Packing": "REXIN / VELVET BOX"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 700,
+    "height": 680
+  },
+  {
+    "id": "I10",
+    "index": 10,
+    "image": "/gallery/I10.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": "I11",
+    "index": 11,
+    "image": "/gallery/I11.jpg",
+    "title": "German Silver Decorative Basket (ACGS-23)",
+    "text": "*CODE - ACGS-23\n*GERMAN SILVER BASKET\n* SIZE - 6\u201d DIAMETER\n* 8\u201d DIAMETER\n* 10\u201d DIAMETER\n* 12\u201d DIAMETER\nPACKING - CARD BOARD BOX",
+    "specs": {
+      "Code": "ACGS-23",
+      "Material": "German Silver",
+      "Size": "6\u201d DIAMETER",
+      "Packing": "CARD BOARD BOX"
+    },
+    "category": "\ud83e\uddfa Decorative Baskets",
+    "hasText": true,
+    "width": 1000,
+    "height": 530
+  },
+  {
+    "id": "I12",
+    "index": 12,
+    "image": "/gallery/I12.jpg",
+    "title": "Gold Plated Gift Item",
+    "text": "*GOLD PLATED",
+    "specs": {
+      "Material": "Gold Plated"
+    },
+    "category": "\u2728 Gold Plated Collection",
+    "hasText": true,
+    "width": 900,
+    "height": 900
+  },
+  {
+    "id": "I13",
+    "index": 13,
+    "image": "/gallery/I13.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 850,
+    "height": 860
+  },
+  {
+    "id": "I14",
+    "index": 14,
+    "image": "/gallery/I14.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 1600,
+    "height": 520
+  },
+  {
+    "id": "I15",
+    "index": 15,
+    "image": "/gallery/I15.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 1200,
+    "height": 1450
+  },
+  {
+    "id": "I16",
+    "index": 16,
+    "image": "/gallery/I16.jpg",
+    "title": "Powder Coated Iron Urli / Planter (ACGS-20)",
+    "text": "GODE \u2014ACGS-20\nPOWDER COATED IRON URLI\n10\u201d\n12\u201d\n14\u201d\nPACKING -CARD BOARD BOX\nPACKING",
+    "specs": {
+      "Code": "ACGS-20",
+      "Material": "Powder Coated Iron",
+      "Packing": "CARD BOARD BOX"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 650,
+    "height": 680
+  },
+  {
+    "id": "I17",
+    "index": 17,
+    "image": "/gallery/I17.jpg",
+    "title": "Powder Coated Iron Urli / Planter (ACGS-18)",
+    "text": "GODE\u2014 ACGS-18\nPOWDER COATED IRON URLI\nSIZE - 12\u201d",
+    "specs": {
+      "Code": "ACGS-18",
+      "Material": "Powder Coated Iron",
+      "Size": "12\u201d"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 700,
+    "height": 740
+  },
+  {
+    "id": "I18",
+    "index": 18,
+    "image": "/gallery/I18.jpg",
+    "title": "Decorative Basket with Jars (AGGS-16)",
+    "text": "GODE\u2014 AGGS-16\nBASKET WITH 4 JAR\nPACKING - CARD BOARD BOX",
+    "specs": {
+      "Code": "AGGS-16",
+      "Packing": "CARD BOARD BOX"
+    },
+    "category": "\ud83e\uddfa Decorative Baskets",
+    "hasText": true,
+    "width": 850,
+    "height": 860
+  },
+  {
+    "id": "I19",
+    "index": 19,
+    "image": "/gallery/I19.jpg",
+    "title": "Gold Plated Decorative Tray with Jars (ACGS-14)",
+    "text": "CODE \u2014 ACGS-14\nGold Plated Tray with 2 Jar set\n\u00b0 SIZE - 8.5\u201d x 4.5\u201d Tray\nJar - 4\nING - CARD BOARD BOX",
+    "specs": {
+      "Code": "ACGS-14",
+      "Material": "Gold Plated",
+      "Size": "8.5\u201d x 4.5\u201d Tray"
+    },
+    "category": "\ud83e\udd42 Trays & Jar Sets",
+    "hasText": true,
+    "width": 900,
+    "height": 860
+  },
+  {
+    "id": "I20",
+    "index": 20,
+    "image": "/gallery/I20.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 950,
+    "height": 830
+  },
+  {
+    "id": "I21",
+    "index": 21,
+    "image": "/gallery/I21.jpg",
+    "title": "Decorative Basket with Jars (ACGS-08)",
+    "text": "CODE - ACGS-08\nPICHWAI BASKET MEENA\nPRINT WITH 2 JAR\n\u00b0 SIZE - 8\u201d DIAMETER\n\u00b0 10\u201d DIAMETER\nPACKING - CARD BOARD BOX",
+    "specs": {
+      "Code": "ACGS-08",
+      "Size": "8\u201d DIAMETER",
+      "Packing": "CARD BOARD BOX"
+    },
+    "category": "\ud83e\uddfa Decorative Baskets",
+    "hasText": true,
+    "width": 1250,
+    "height": 880
+  },
+  {
+    "id": "I22",
+    "index": 22,
+    "image": "/gallery/I22.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 850,
+    "height": 880
+  },
+  {
+    "id": "I23",
+    "index": 23,
+    "image": "/gallery/I23.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 900,
+    "height": 860
+  },
+  {
+    "id": "I24",
+    "index": 24,
+    "image": "/gallery/I24.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 950,
+    "height": 800
+  },
+  {
+    "id": "I25",
+    "index": 25,
+    "image": "/gallery/I25.jpg",
+    "title": "Premium Gift Item",
+    "text": "Packing \u2014 Card Board",
+    "specs": {
+      "Packing": "Card Board"
+    },
+    "category": "\ud83e\uddfa Decorative Baskets",
+    "hasText": true,
+    "width": 900,
+    "height": 900
+  },
+  {
+    "id": "I26",
+    "index": 26,
+    "image": "/gallery/I26.jpg",
+    "title": "Gift Item (ACGS-35)",
+    "text": "Size & Dimensions\n16\u201dx 11\u201d x 2\u201d IN\nCODE - ACGS-35\nFRY\nSEP\n14\u201d x 10\u201d x 1.75\u201d IN\n12\u201dx 9\" x 1.5\u201d IN c\nPacking \u2014 Card Board",
+    "specs": {
+      "Code": "ACGS-35",
+      "Packing": "Card Board"
+    },
+    "category": "\ud83e\udd42 Trays & Jar Sets",
+    "hasText": true,
+    "width": 950,
+    "height": 900
+  },
+  {
+    "id": "I27",
+    "index": 27,
+    "image": "/gallery/I27.jpg",
+    "title": "Silver Plated & Pure Brass Urli / Planter (ACGS-33)",
+    "text": "CODE \u2014ACGS-33\nSILVER PLATED PURE BRASS\nURLI / PLANTER\nWEIGHT - APP 750\nGMS.\nSIZE - 8\u201d DIAMETER\nPACKING -REXIN / VELVET BOX",
+    "specs": {
+      "Code": "ACGS-33",
+      "Material": "Silver Plated & Pure Brass",
+      "Size": "8\u201d DIAMETER",
+      "Weight": "750",
+      "Packing": "REXIN / VELVET BOX"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 850,
+    "height": 900
+  },
+  {
+    "id": "I28",
+    "index": 28,
+    "image": "/gallery/I28.jpg",
+    "title": "Silver Plated & Pure Brass Urli / Planter (ACGS-30)",
+    "text": "CODE - ACGS-30\nSILVER PLATED PURE BRASS\nURLI\nWEIGHT - APP 750\nGMS.\nSIZE - 8\u201d DIAMETER\nPACKING -REXIN / VELVET BOX",
+    "specs": {
+      "Code": "ACGS-30",
+      "Material": "Silver Plated & Pure Brass",
+      "Size": "8\u201d DIAMETER",
+      "Weight": "750",
+      "Packing": "REXIN / VELVET BOX"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 850,
+    "height": 800
+  },
+  {
+    "id": "I29",
+    "index": 29,
+    "image": "/gallery/I29.jpg",
+    "title": "Gold Plated & Pure Brass Urli / Planter (ACGS-29)",
+    "text": "CODE \u2014ACGS-29\nGOLD PLATED PURE BRASS URLI\nWEIGHT - APP 900 GMS.\nSIZE - 8\u201d DIAMETER\nSIZE - 10\u201d DIAMETER\nPACKING -REXIN / VELVET BOX",
+    "specs": {
+      "Code": "ACGS-29",
+      "Material": "Gold Plated & Pure Brass",
+      "Size": "8\u201d DIAMETER",
+      "Weight": "900 GMS.",
+      "Packing": "REXIN / VELVET BOX"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 800,
+    "height": 680
+  },
+  {
+    "id": "I30",
+    "index": 30,
+    "image": "/gallery/I30.jpg",
+    "title": "Silver Plated & Pure Brass Urli / Planter (ACGS-26)",
+    "text": "GODE\u2014ACGS-26\nSILVER PLATED PURE BRASS URLI\nWEIGHT - APP. 900 GMS.\nSIZE - 8\u201d DIAMETER\nSIZE - 10\u201d DIAMETER\nPACKING -REXIN / VELVET BOX",
+    "specs": {
+      "Code": "ACGS-26",
+      "Material": "Silver Plated & Pure Brass",
+      "Size": "8\u201d DIAMETER",
+      "Weight": "900 GMS.",
+      "Packing": "REXIN / VELVET BOX"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 850,
+    "height": 710
+  },
+  {
+    "id": "I31",
+    "index": 31,
+    "image": "/gallery/I31.jpg",
+    "title": "Premium Gift Item",
+    "text": "SIZE - 8\u201d\nDIAMETER",
+    "specs": {
+      "Size": "8\u201d"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 650,
+    "height": 800
+  },
+  {
+    "id": "I32",
+    "index": 32,
+    "image": "/gallery/I32.jpg",
+    "title": "Powder Coated Iron Urli / Planter (ACGS-19)",
+    "text": "CODE \u2014ACGS-19\nPOWDER COATED IRON URLI\nSIZE - 12\u201d",
+    "specs": {
+      "Code": "ACGS-19",
+      "Material": "Powder Coated Iron",
+      "Size": "12\u201d"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 700,
+    "height": 680
+  },
+  {
+    "id": "I33",
+    "index": 33,
+    "image": "/gallery/I33.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 850,
+    "height": 880
+  },
+  {
+    "id": "I34",
+    "index": 34,
+    "image": "/gallery/I34.jpg",
+    "title": "Gold Plated Decorative Tray with Jars (ACGS-15)",
+    "text": "GODE\u2014ACGS-15\nGold Plated Tray with 3 Jar set\n\u00b0 SIZE - 4\u201d Jar\nTray - 10\u201d x 4\u201d\nPACKING - CARD BOARD BOX",
+    "specs": {
+      "Code": "ACGS-15",
+      "Material": "Gold Plated",
+      "Size": "4\u201d Jar",
+      "Packing": "CARD BOARD BOX"
+    },
+    "category": "\ud83e\udd42 Trays & Jar Sets",
+    "hasText": true,
+    "width": 750,
+    "height": 620
+  },
+  {
+    "id": "I35",
+    "index": 35,
+    "image": "/gallery/I35.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 800,
+    "height": 880
+  },
+  {
+    "id": "I36",
+    "index": 36,
+    "image": "/gallery/I36.jpg",
+    "title": "Premium Gift Item",
+    "text": "iWaleke\nCAN\n=",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": true,
+    "width": 850,
+    "height": 860
+  },
+  {
+    "id": "I37",
+    "index": 37,
+    "image": "/gallery/I37.jpg",
+    "title": "Premium Gift Item",
+    "text": "Premium handcrafted gift item",
+    "specs": {},
+    "category": "\ud83c\udf81 Premium Gift Items",
+    "hasText": false,
+    "width": 550,
+    "height": 880
+  },
+  {
+    "id": "I38",
+    "index": 38,
+    "image": "/gallery/I38.jpg",
+    "title": "Powder Coated Iron Urli / Planter (ACGS-21)",
+    "text": "BODE \u2014ACGS-21\nPOWDER COATED IRON URLI\nSIVA\n10\u201d\nae\n14\u201d\n16\u201d\nPACKING - CARD BOARD BOX",
+    "specs": {
+      "Code": "ACGS-21",
+      "Material": "Powder Coated Iron",
+      "Packing": "CARD BOARD BOX"
+    },
+    "category": "\ud83c\udffa Urli & Planters",
+    "hasText": true,
+    "width": 600,
+    "height": 620
+  }
+]
