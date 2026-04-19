@@ -1,12 +1,16 @@
 """
 AIRA Platform — AI Image Processor
 ===================================
-Extracts images from a ZIP, runs OCR (Tesseract) to detect and extract text,
-removes text via OpenCV inpainting, and writes a JSON manifest consumed by
-the Next.js API routes.
+Reads images from a folder (or a ZIP), runs OCR (Tesseract) to detect and
+extract text, removes text via OpenCV inpainting, and writes a JSON manifest
+consumed by the Next.js API routes.
 
 Usage:
-    python scripts/process_images.py --zip path/to/images.zip --out public/gallery
+    # Directly from a folder of images (recommended)
+    python scripts/process_images.py --input images/ --out public/gallery
+
+    # Also accepts a ZIP if you need it
+    python scripts/process_images.py --input path/to/images.zip --out public/gallery
 
 Requirements:
     pip install opencv-python-headless pillow pytesseract numpy
@@ -33,18 +37,55 @@ from PIL import Image
 
 SUPPORTED_EXT = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tiff"}
 
+# Lines matching these patterns are captured as structured specs —
+# strip them from display_text so the modal doesn't show them twice.
+SPEC_LINE_PATTERNS = [
+    r"(?:CODE|GODE|BODE)\s*[-—:*]?\s*[A-Z0-9\-]+",   # product code
+    r"SIZE\s*[-—:]",                                    # size spec
+    r"WEIGHT\s*[-—:APP. ]*",                            # weight spec
+    r"PACK(?:ING)?\s*[-—:]",                            # packing spec
+    r"GOLD PLATED",                                     # material labels
+    r"SILVER PLATED",
+    r"GERMAN SILVER",
+    r"^\s*BRASS\s*$",
+    r"POWDER COATED IRON",
+]
 
-def extract_zip(zip_path: str, dest: str) -> list[Path]:
-    """Extract image files from ZIP; return sorted list of paths."""
-    dest_path = Path(dest)
-    dest_path.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(zip_path, "r") as zf:
-        zf.extractall(dest_path)
-    images = sorted(
-        [p for p in dest_path.rglob("*") if p.suffix.lower() in SUPPORTED_EXT],
-        key=lambda p: _natural_sort_key(p.name),
-    )
-    return images
+
+def get_images(input_path: str) -> list[Path]:
+    """
+    Accept either a folder of images or a ZIP file.
+    Returns a naturally-sorted list of image Paths ready to process.
+    """
+    p = Path(input_path)
+
+    if p.is_dir():
+        # ── Folder mode (recommended) ─────────────────────────
+        images = sorted(
+            [f for f in p.rglob("*") if f.suffix.lower() in SUPPORTED_EXT],
+            key=lambda f: _natural_sort_key(f.name),
+        )
+        print(f"📂  Reading from folder: {p}  ({len(images)} image(s) found)")
+        return images
+
+    elif p.suffix.lower() == ".zip":
+        # ── ZIP mode (still supported) ────────────────────────
+        tmp = Path("/tmp/aira_images")
+        if tmp.exists():
+            import shutil as _sh; _sh.rmtree(tmp)
+        tmp.mkdir(parents=True)
+        print(f"📦  Extracting ZIP: {p} …")
+        with zipfile.ZipFile(str(p), "r") as zf:
+            zf.extractall(tmp)
+        images = sorted(
+            [f for f in tmp.rglob("*") if f.suffix.lower() in SUPPORTED_EXT],
+            key=lambda f: _natural_sort_key(f.name),
+        )
+        print(f"    Extracted {len(images)} image(s)")
+        return images
+
+    else:
+        raise ValueError(f"--input must be a folder or a .zip file, got: {input_path}")
 
 
 def _natural_sort_key(s: str):
@@ -145,16 +186,24 @@ CATEGORY_RULES = [
 ]
 
 
+def _is_spec_line(line: str) -> bool:
+    """Return True if this line's content is already captured as a structured spec."""
+    for pattern in SPEC_LINE_PATTERNS:
+        if re.search(pattern, line, re.IGNORECASE):
+            return True
+    return False
+
+
 def parse_product(text: str, img_id: str):
     """Parse OCR text into structured product fields."""
     code_m = re.search(r"(?:CODE|GODE|BODE)[^\w]*([A-Z0-9\-]+)", text, re.IGNORECASE)
     code = code_m.group(1).strip("-— ") if code_m else None
 
     materials = []
-    if re.search(r"GOLD PLATED", text, re.IGNORECASE):   materials.append("Gold Plated")
-    if re.search(r"SILVER PLATED", text, re.IGNORECASE): materials.append("Silver Plated")
-    if re.search(r"GERMAN SILVER", text, re.IGNORECASE): materials.append("German Silver")
-    if re.search(r"BRASS", text, re.IGNORECASE):         materials.append("Pure Brass")
+    if re.search(r"GOLD PLATED", text, re.IGNORECASE):        materials.append("Gold Plated")
+    if re.search(r"SILVER PLATED", text, re.IGNORECASE):      materials.append("Silver Plated")
+    if re.search(r"GERMAN SILVER", text, re.IGNORECASE):      materials.append("German Silver")
+    if re.search(r"BRASS", text, re.IGNORECASE):              materials.append("Pure Brass")
     if re.search(r"POWDER COATED IRON", text, re.IGNORECASE): materials.append("Powder Coated Iron")
 
     ptype = "Gift Item"
@@ -168,11 +217,11 @@ def parse_product(text: str, img_id: str):
     pack_m   = re.search(r"PACK(?:ING)?\s*[-—:]\s*([^\n]+)", text, re.IGNORECASE)
 
     specs: dict[str, str] = {}
-    if code:                    specs["Code"]     = code
-    if materials:               specs["Material"] = " & ".join(materials)
-    if size_m:                  specs["Size"]     = size_m.group(1).strip()
-    if weight_m:                specs["Weight"]   = weight_m.group(1).strip()
-    if pack_m:                  specs["Packing"]  = pack_m.group(1).strip()
+    if code:      specs["Code"]     = code
+    if materials: specs["Material"] = " & ".join(materials)
+    if size_m:    specs["Size"]     = size_m.group(1).strip()
+    if weight_m:  specs["Weight"]   = weight_m.group(1).strip()
+    if pack_m:    specs["Packing"]  = pack_m.group(1).strip()
 
     # Title
     if materials and code:
@@ -191,9 +240,26 @@ def parse_product(text: str, img_id: str):
             category = cat_name
             break
 
-    # Clean display text
-    lines = [l.strip() for l in text.splitlines() if l.strip() and l.strip() not in {"*", "—", "·", "°", "-"}]
-    display = "\n".join(lines) if lines else ""
+    # ── FIX: Strip lines already captured as specs ──────────────
+    # This prevents the modal from showing the same info twice
+    # (once in the structured specs panel, once in the OCR text block).
+    JUNK = {"*", "—", "·", "°", "-", "|", "~"}
+    extra_lines = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if stripped in JUNK:
+            continue
+        if _is_spec_line(stripped):
+            continue  # already captured in specs dict — skip
+        extra_lines.append(stripped)
+
+    display = "\n".join(extra_lines).strip()
+
+    # Only mark hasText=True when there's genuinely extra information
+    # beyond what's already in specs (e.g. a brand name, description, note)
+    has_text = bool(display) and len(extra_lines) > 0
 
     return title, display, specs, category
 
@@ -202,17 +268,12 @@ def parse_product(text: str, img_id: str):
 # MAIN PIPELINE
 # ─────────────────────────────────────────────────────────────
 
-def process(zip_path: str, out_dir: str, quality: int = 88):
+def process(input_path: str, out_dir: str, quality: int = 88):
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
 
-    # Step 1 — extract ZIP
-    tmp = Path("/tmp/aira_images")
-    if tmp.exists():
-        shutil.rmtree(tmp)
-    print(f"📦  Extracting {zip_path} …")
-    images = extract_zip(zip_path, str(tmp))
-    print(f"    Found {len(images)} image(s)")
+    # Step 1 — collect images (folder or ZIP, both supported)
+    images = get_images(input_path)
 
     results = []
 
@@ -241,7 +302,6 @@ def process(zip_path: str, out_dir: str, quality: int = 88):
 
         # Step 6 — parse product info
         title, display_text, specs, category = parse_product(full_text, img_id)
-        has_text = bool(display_text and display_text != "Premium gift collection")
         print(f"🏷  {title[:50]}")
 
         results.append(
@@ -250,10 +310,12 @@ def process(zip_path: str, out_dir: str, quality: int = 88):
                 "index":    idx,
                 "image":    f"/gallery/{img_id}.jpg",
                 "title":    title,
-                "text":     display_text if has_text else specs.get("Material", "Premium handcrafted gift item"),
+                # text now only contains info NOT already shown in specs
+                "text":     display_text if display_text else "",
                 "specs":    specs,
                 "category": category,
-                "hasText":  has_text,
+                # hasText=True only if there's genuinely extra OCR info
+                "hasText":  bool(display_text),
                 "width":    w,
                 "height":   h,
             }
@@ -275,9 +337,12 @@ def process(zip_path: str, out_dir: str, quality: int = 88):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AIRA AI Image Processor")
-    parser.add_argument("--zip",     required=True,               help="Path to images ZIP file")
-    parser.add_argument("--out",     default="public/gallery",    help="Output directory (default: public/gallery)")
-    parser.add_argument("--quality", default=88, type=int,        help="JPEG output quality 1-100 (default: 88)")
+    parser.add_argument(
+        "--input", required=True,
+        help="Path to a folder of images OR a .zip file  (e.g. images/  or  photos.zip)"
+    )
+    parser.add_argument("--out",     default="public/gallery", help="Output directory (default: public/gallery)")
+    parser.add_argument("--quality", default=88, type=int,     help="JPEG output quality 1-100 (default: 88)")
     args = parser.parse_args()
 
-    process(args.zip, args.out, args.quality)
+    process(args.input, args.out, args.quality)
